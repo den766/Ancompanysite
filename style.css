@@ -1,0 +1,933 @@
+:root {
+  --font-Primary: "Urbanist", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 830vh;
+  /* background: linear-gradient(135deg, #56CCF2, #2F80ED); */
+}
+
+/* !Header Section Styling */
+/* 
+header {
+  max-width: 90%;
+  height: 3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.navItem1 {
+  width: 53rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.navItem2 {
+  width: 13.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search-bar {
+  width: 36rem;
+  height: 3rem;
+  outline: none;
+  color: #949ca9;
+  background-color: #fbfbfb;
+  border: none;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+.Search-bar::placeholder {
+  font-size: 1rem;
+  
+}
+
+.Search-bar:focus {
+  outline: none;
+  caret-color: #949ca9;
+} */
+
+/* Header Section Styling */
+
+.Section {
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+header {
+  max-width: 90%; /* Use percentage for better responsiveness */
+  height: auto; /* Allow height to adjust based on content */
+  margin: 1.5rem auto; /* Center the header */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* Add gap between items */
+  padding: 1rem; /* Add padding for better spacing */
+}
+
+.navItem1 {
+  /* Allow navItem1 to grow and take available space */
+  width: 71.3%;
+  display: flex;
+  align-items: center;
+  gap: 8rem; /* Add gap between logo and search bar */
+}
+
+.logo {
+  max-width: 100%; /* Ensure the logo scales with its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.search-container {
+  flex: 1; /* Allow search container to grow */
+  display: flex;
+  align-items: center;
+  background-color: #fbfbfb;
+  border-radius: 8px; /* Add rounded corners */
+  padding: 0.5rem; /* Add padding for better spacing */
+}
+
+.Search-bar {
+  width: 100%; /* Make the search bar fill its container */
+  height: 2.5rem; /* Reduce height for better proportions */
+  outline: none;
+  color: #949ca9;
+  background-color: transparent; /* Match container background */
+  border: none;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+.Search-bar::placeholder {
+  font-size: 1rem;
+}
+
+.Search-bar:focus {
+  outline: none;
+  caret-color: #949ca9;
+}
+
+.navItem2 {
+  width: 18.14%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* Add gap between icons */
+}
+
+.navItem2 img {
+  max-width: 100%; /* Ensure icons scale with their container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .navItem1 {
+    width: 100%;
+    gap: 1rem;
+  }
+  .navItem2 {
+    display: none;
+  }
+
+  .Search-bar::placeholder {
+    font-size: 15px;
+  }
+}
+
+/* !Nav styling*/
+.nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding: 0 1rem;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navlinks.sticky {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: white; /* Optional: Ensure visibility */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  z-index: 2;
+  height: clamp(2.5rem, 5vw, 7rem);
+}
+
+.navlinks p {
+  font-size: clamP(0.9rem, 2vw, 1.2rem);
+  font-family: var(--font-Primary);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  color: #213d39;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navlinks p:hover {
+  color: #007bff;
+}
+
+/* !Banner Section Styling */
+.Banner-Section {
+  width: 90%;
+  max-width: 1200px;
+  background-color: #f4f9ff;
+  margin: 2rem auto;
+  border-radius: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.Banner {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Banner h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: var(--font-Primary);
+  color: #213d39;
+}
+
+.Banner .name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #24416c;
+  font-family: var(--font-Primary);
+  font-weight: bold;
+}
+
+.para {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #213d39;
+  font-family: var(--font-Primary);
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.UsersReview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.UsersReview h2 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--font-Primary);
+}
+
+.UsersReview p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.img-Container {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-Container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Btn-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.Btn-nav .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 32px;
+  background: linear-gradient(45deg, #6c57db 100%, #0c191f 79%, #00b8d9 10%);
+}
+
+.SecondBtn {
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 500;
+  color: black;
+  border: none;
+  cursor: pointer;
+  background-color: #f4f9ff;
+}
+
+.Txt__WithIMg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Txt__WithIMg img {
+  max-width: 24px;
+  height: auto;
+}
+/* !Section one styling */
+
+.Section__1 {
+  /* background-color: #f4f9ff; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 88%;
+  gap: 1rem;
+  padding: 1.2rem;
+  /* background-color: red; */
+  margin: 6.2rem auto 0;
+}
+
+.SpecialHeading {
+  text-align: center;
+  font-family: var(--font-Primary);
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.headingSpecial {
+  color: #6c57db;
+}
+
+.First__div {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.First__div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.First__div > h3 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: bold;
+  font-family: var(--font-Primary);
+  white-space: wrap;
+}
+
+.First__div > p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  white-space: normal;
+  font-weight: normal;
+  word-break: break-word;
+  line-height: normal;
+}
+
+@media (max-width: 600px) {
+  .First__div {
+    gap: 0rem;
+    margin: 0;
+  }
+}
+
+.Second_div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.Second_div > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.Second_div > div {
+  margin-top: 3rem;
+}
+
+.Description > h3 {
+  font-size: clamp(1rem, 3vw, 2.7rem);
+  font-family: var(--font-Primary);
+  color: #213d39;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.Description > p {
+  font-size: clamp(1rem, 2vw, 1rem);
+  font-family: var(--font-Primary);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  white-space: wrap;
+  word-break: break;
+}
+
+/* ! Section Two Styling */
+
+.Section__Two {
+  /* background-color: #f4f9ff; */
+  margin: 7.185rem auto 0;
+  width: 88%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.Section__Two > .SecTwo__Txt {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-inline: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.SecTwo__Txt h3 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-family: var(--font-Primary);
+  line-height: 1.2;
+  /* letter-spacing: 0.1em; */
+  color: #213d39;
+  text-align: left;
+}
+
+.SecTwo__Txt p {
+  font-family: var(--font-Primary);
+  font-size: clamp(1rem, 2vw, 1rem);
+  font-family: var(--font-Primary);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  white-space: wrap;
+  word-break: break;
+}
+
+.SecTwo__an {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.box {
+  height: 356px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  white-space: wrap;
+  background-color: #f4f9ff;
+  text-align: center;
+  border-radius: 2rem;
+}
+
+.box img {
+  max-width: 100%;
+  min-width: 15px;
+  height: auto;
+}
+
+.box h4 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-family: var(--font-Primary);
+  /* line-height: 1.5; */
+  /* letter-spacing: 0.1em; */
+  color: #213d39;
+  font-weight: 600;
+}
+
+.box p {
+  font-family: var(--font-Primary);
+  font-size: clamp(1rem, 1vw, 0.5rem);
+  font-family: var(--font-Primary);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  white-space: wrap;
+  word-break: break-word;
+}
+
+/* !Section 4 styling */
+
+.Section__3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 88%;
+  gap: 1rem;
+  padding: 1.2rem;
+  /* background-color: red; */
+  margin: 6.2rem auto 0;
+}
+.Section__3 > p {
+  text-align: center;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  white-space: normal;
+  font-weight: normal;
+  word-break: break-word;
+  line-height: normal;
+}
+
+.SecInsideDiv {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.Section_3Grd {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  width: 60.59%;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 3rem;
+  padding: 2rem;
+  align-items: center;
+  background-color: #f4f9ff;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+.box2 h4 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-family: var(--font-Primary);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  color: #213d39;
+  font-weight: 600;
+}
+
+.box2 p {
+  /* text-align: center; */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  white-space: normal;
+  font-weight: normal;
+  word-break: break-word;
+  line-height: normal;
+}
+
+.box2:hover {
+  transition: 0.2s all ease-out;
+}
+
+.bigImg {
+  flex: 1;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bigImg > img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* !Feedback Section Styling */
+
+.Feedback__Section {
+  width: 88%;
+  height: 400px;
+  margin: 6.2rem auto 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #354585;
+}
+
+.Fd__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.Fd__text h4 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-family: var(--font-Primary);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  color: white;
+  font-weight: 600;
+}
+
+.Fd__text p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  white-space: normal;
+  font-weight: normal;
+  word-break: break-word;
+  line-height: normal;
+  color: white;
+}
+
+.SignUp__btn {
+  width: 153px;
+  height: 58px;
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 32px;
+  background-color: #606c9b;
+}
+
+/* !Testimonial Styling */
+
+.slider-container {
+  position: relative;
+  width: 88%;
+  margin: 6.2rem auto 0;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background-color: #354585; */
+  /* color: white; */
+  padding: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: clamp(0.8rem, 3vw, 3rem);
+}
+
+.prev {
+  left: -12px;
+}
+.next {
+  right: -12px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.active {
+  background-color: black;
+}
+
+/* !Sponsers Section Styling */
+
+.Sponsers {
+  width: 88%;
+  margin: 6.2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.Sponsers img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* !Question Section Styling */
+
+.Questions {
+  position: relative;
+  width: 88%;
+  margin: 5rem auto 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #2b4277;
+}
+
+.SpecialHeading > .FirstSpecialWord {
+  color: white;
+}
+
+.Qs__div {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.Real_Qs ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-Primary);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+}
+
+.Qs__list li {
+  color: white;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.Qs_Plusdiv {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+.Qs_Plusdiv div {
+  padding-inline: 1rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: white;
+  padding-inline: 1rem;
+}
+
+/* !Overflow seciton Styling */
+
+.overflow {
+  width: 90%;
+  height: 130px;
+  background: #f4f9ff;
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.FirstOver__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.FirstOver__section h4 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: var(--font-Primary);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  color: #213d39;
+  font-weight: 600;
+}
+
+.FirstOver__section p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: var(--font-Primary);
+  white-space: normal;
+  font-weight: normal;
+  word-break: break-word;
+  line-height: normal;
+  color: #213d39;
+}
+
+.SecondOver__section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.SecondOver__section > div {
+  background-color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.nested__Sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nested__Sec > button {
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 32px;
+  background: linear-gradient(45deg, #6c57db 100%, #0c191f 79%, #00b8d9 10%);
+}
+
+.nested__Sec input {
+  /* Make the search bar fill its container */
+  height: 2.5rem; /* Reduce height for better proportions */
+  outline: none;
+  color: #949ca9;
+  background-color: transparent; /* Match container background */
+  border: none;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+/* !Footer styling */
+
+footer > div {
+  width: 88%;
+  margin: 9rem auto 0;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.Footer__Firstdiv {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Footer__Firstdiv h4 {
+  font-family: var(--font-Primary);
+  font-size: clamp(0.8rem, 3vw, 1.3rem);
+}
+
+.Footer__Firstdiv p {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  line-height: 1.3;
+  font-family: var(--font-Primary);
+  letter-spacing: 0.1em;
+  /* white-space: wrap; */
+  /* word-break: break-word; */
+  /* word-wrap: break-word; */
+}
+
+.CopyRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 1rem;
+}
+
+.CopyRight > p {
+  font-family: var(--font-Primary);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
