@@ -189,7 +189,7 @@ header {
   background: white; /* Optional: Ensure visibility */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
   z-index: 2;
-  height: clamp(2.5rem, 5vw, 7rem);
+  height: clamp(4rem, 5vw, 7rem);
 }
 
 .navlinks p {
