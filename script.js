@@ -1,7 +1,7 @@
 "use strict";
 
 // Elements selecting
-
+const sections = document.querySelectorAll("section");
 const nav = document.querySelector(".navlinks");
 const ScrollbtnHome = document.getElementById('home');
 const sectionHome = document.querySelector('.Banner-Section');
@@ -20,6 +20,7 @@ const slides = document.querySelectorAll(".slide");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const dots = document.querySelectorAll(".dot");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
 let currentIndex = 0;
 
 function updateSlider() {
@@ -123,5 +124,24 @@ const SectionObserver = new IntersectionObserver(SectionReaveal, {
 allSections.forEach(function (section) {
   SectionObserver.observe(section);
   section.classList.add("section--hidden");
+});
+
+// ScrollTopBtn funcionality.
+
+let scrollThreshold = 0;
+for (let i = 0; i < 3 && i < sections.length; i++) {
+  scrollThreshold += sections[i].offsetHeight;
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > scrollThreshold) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
